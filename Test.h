@@ -14,21 +14,27 @@ public:
 
   void run();
 
-  void testEmptyQueue();
+  void print(bool success);
 
-  void testDeleteEmptyQueue();
+  void testDeleteQueue();
 
   void testPopulatedQueue();
 
-  void testIsEmpty();
+  void testIsEmptyReturnsTrue();
 
-  void print(bool success);
+  void testIsEmptyReturnsFalse();
 
-  void peekFrontReturns();
+  void testEnqueueEmptyQueue();
 
-  void peekFrontError();
+  void testEnqueueAddsBack();
 
-  void peekFrontPost();
+  void testPeekFrontReturns();
+
+  void testPeekFrontNoError();
+
+  void testPeekFrontError();
+
+  void testPeekFrontPost();
 
 };
 #endif
