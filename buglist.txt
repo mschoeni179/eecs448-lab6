@@ -1,0 +1,14 @@
+Bug List
+
+1. Enqueue
+  I believe enqueue incorrectly adds a value to the front of the queue instead
+  of the back. For example, adding the value of 1, then adding 2 to an empty Queue
+  should mean the first value in the queue is 11 followed by 2 since a Queue is a FIFO
+  structure. However, if you call peekFront after adding 1 and 2, it returns 2.
+
+
+2. destructor
+  The destructor does appear to delete the nodes, at least enough that the you cannot
+  call additional Queue functions after deleting the queue. However, the queue ptr is
+  not getting set back to nullptr after deletion. There is still memory allocated For
+  the Queue even if there is no actual tangile queue left to interact with. 

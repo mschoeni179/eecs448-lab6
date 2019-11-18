@@ -17,6 +17,7 @@ void Test::run()
     testIsEmptyReturnsTrue();
     testIsEmptyReturnsFalse();
     testEnqueueEmptyQueue();
+    testEnqueueAddsBack();
     testPeekFrontError();
     testPeekFrontNoError();
     testPeekFrontReturns();
@@ -35,6 +36,7 @@ void Test::testIsEmptyReturnsTrue()
 void Test::testIsEmptyReturnsFalse()
 {
   Queue p;
+  p.enqueue(2);
   std::cout<< "Test 2: isEmpty() returns false for populated Queue";
   bool test = !p.isEmpty();
   print(test);
@@ -43,15 +45,15 @@ void Test::testIsEmptyReturnsFalse()
 void Test::testEnqueueEmptyQueue()
 {
   Queue p;
-  std::cout << "Test 3: enqueue() adds to empty queue (no longer empty):";
+  std::cout << "Test 3: enqueue adds to empty queue (no longer empty):";
   p.enqueue(1);
-  bool test = p.isEmpty();
+  bool test = !p.isEmpty();
   print(test);
 }
 
 void Test::testEnqueueAddsBack()
 {
-  std::cout << "Test 4: enqueue() adds to back of a populated Queue:";
+  std::cout << "Test 4: enqueue adds to back of a populated Queue:";
   Queue p;
   p.enqueue(1);
   p.enqueue(2);
@@ -92,7 +94,7 @@ void Test::testPeekFrontNoError()
   Queue t;
   t.enqueue(3);
   bool success = true;
-  try 
+  try
   {
     int num = t.peekFront();
   }
